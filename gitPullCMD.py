@@ -8,11 +8,11 @@ def main(argv):
     try:
        opts, args = getopt.getopt(argv,"hu:p:",["ifile=","ofile="])
     except getopt.GetoptError:
-       print 'test.py -u <gitURI> -p <gitProjectName> \n for authenticated gitrepo, follow uri pattern: "https://username:password@myrepository.biz/file.git"'
+       print 'gitPullCMD.py -u <gitURI> -p <gitProjectName> \n for authenticated gitrepo, follow uri pattern: "https://username:password@myrepository.biz/file.git"'
        sys.exit(2)
     for opt, arg in opts:
        if opt == '-h':
-          print 'test.py -u <uri> -p <ProjectName> \n for authenticated gitrepo, please follow uri pattern: "https://username:password@myrepository.biz/file.git"'
+          print 'gitPullCMD.py -u <uri> -p <ProjectName> \n for authenticated gitrepo, please follow uri pattern: "https://username:password@myrepository.biz/file.git"'
           sys.exit()
        elif opt in ("-u", "--ifile"):
           gituri = arg
@@ -27,7 +27,7 @@ def main(argv):
     #subprocess
     #subprocess.call(["cd", gitproject])
     #folderpath = subprocess.call(["pwd"])
-    os.chdir("nodejs-ex")
+    os.chdir(gitproject)
     path = os. getcwd()    
     print 'inside folder:'+path;
     print 'starting npm install....'
